@@ -1,0 +1,158 @@
+:root {
+    color-scheme: dark;
+    --fondo: #0d1117;
+    --panel: rgba(26, 30, 36, 0.96);
+    --borde: rgba(123, 220, 57, 0.25);
+    --verde: #7bdc39;
+    --verde-claro: #c8ff72;
+    --texto: #e2e8f0;
+    --texto-secundario: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background:
+        radial-gradient(circle at top left, rgba(123, 220, 57, 0.14), transparent 28%),
+        linear-gradient(135deg, #10151a, #151821, var(--fondo), #12301f);
+}
+
+a {
+    color: inherit;
+}
+
+.encabezado-app {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 20px 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.marca {
+    display: block;
+}
+
+.logo-app {
+    width: min(260px, 55vw);
+    display: block;
+}
+
+.contenido-principal {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    flex: 1;
+}
+
+.portada {
+    min-height: 480px;
+    display: grid;
+    align-items: center;
+    padding: 42px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background:
+        linear-gradient(90deg, rgba(8, 12, 16, 0.96) 0%, rgba(8, 12, 16, 0.78) 52%, rgba(8, 12, 16, 0.22) 100%),
+        url('../images/bg_inicio_rick_morty.jpg') center / cover;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+}
+
+.portada-contenido {
+    max-width: 580px;
+}
+
+.portada h1 {
+    margin: 8px 0 16px;
+    color: var(--verde-claro);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.portada p {
+    max-width: 60ch;
+    line-height: 1.6;
+}
+
+.etiqueta-superior {
+    margin: 0;
+    color: var(--verde);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+}
+
+.estado-proyecto {
+    padding: 34px 0;
+}
+
+.estado-proyecto h2 {
+    color: var(--verde-claro);
+}
+
+.tarjetas-estado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.tarjetas-estado article {
+    padding: 20px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--panel);
+}
+
+.tarjetas-estado h3 {
+    margin-top: 0;
+}
+
+.tarjetas-estado p {
+    color: var(--texto-secundario);
+    line-height: 1.5;
+}
+
+.pie-pagina {
+    padding: 28px 16px;
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+}
+
+code {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #111720;
+    color: var(--verde-claro);
+}
+
+@media (max-width: 850px) {
+    .encabezado-app {
+        flex-direction: column;
+    }
+
+    .tarjetas-estado {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .portada {
+        min-height: 420px;
+        padding: 24px;
+        background-position: 65% center;
+    }
+
+    .tarjetas-estado {
+        grid-template-columns: 1fr;
+    }
+}
