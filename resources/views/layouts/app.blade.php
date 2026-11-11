@@ -8,6 +8,7 @@
 </head>
 <body>
     <header class="encabezado-app">
+        
         <a href="{{ route('home') }}" class="marca">
             <img src="{{ asset('images/logo_Rick_and_Morty.svg.webp') }}" alt="Rick and Morty" class="logo-app">
         </a>
